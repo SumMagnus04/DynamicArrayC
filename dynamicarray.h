@@ -1,5 +1,5 @@
-#ifndef MACRODYNAMIC_H
-#define MACRODYNAMIC_H
+#ifndef DYNAMICARRAY_H
+#define DYNAMICARRAY_H
 
 #include <stdlib.h>
 #inlcude <stdio.h>
