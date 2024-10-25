@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "macrodynamic.h"
+#include "dynamicarray.h"
 
 typedef struct Vector
 {
