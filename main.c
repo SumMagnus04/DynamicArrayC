@@ -35,7 +35,7 @@ int main()
 	dynamicAdd(vecs, b, Vector);
 	for (unsigned int i = 0; i < vecs.size; i++)
 		printf("x: %f, y: %f\n",
-			((Vector*)vecs.data)[i].x, // The data is still must be cast to Vector*.
+			((Vector*)vecs.data)[i].x, // The data must still be cast to Vector*.
 			((Vector*)vecs.data)[i].y
 		);
 	printf("\n");
