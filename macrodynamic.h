@@ -2,6 +2,7 @@
 #define MACRODYNAMIC_H
 
 #include <stdlib.h>
+#inlcude <stdio.h>
 
 typedef struct DynamicArray
 {
