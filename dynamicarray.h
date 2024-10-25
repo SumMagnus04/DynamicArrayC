@@ -6,7 +6,7 @@
 
 typedef struct DynamicArray
 {
-	void* data; // You must always case the data to the correct pointer type before use.
+	void* data; // You must always cast the data to the correct pointer type before use.
 	unsigned int size; // This is the actual number of elements.
 	unsigned int length; // This just keeps track of how much memory is in use.
 } DynamicArray;
