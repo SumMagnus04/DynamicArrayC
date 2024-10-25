@@ -1,6 +1,8 @@
 #ifndef MACRODYNAMIC_H
 #define MACRODYNAMIC_H
 
+#include <stdlib.h>
+
 typedef struct DynamicArray
 {
 	void* data; // You must always case the data to the correct pointer type before use.
