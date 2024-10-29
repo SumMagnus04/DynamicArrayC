@@ -2,7 +2,7 @@
 #define DYNAMICARRAY_H
 
 #include <stdlib.h>
-#inlcude <stdio.h>
+#include <stdio.h>
 
 typedef struct DynamicArray
 {
@@ -36,6 +36,7 @@ typedef struct DynamicArray
 			} \
 			for (unsigned int i = 0; i < arr.size; i++) \
 				((type*)a)[i] = ((type*)arr.data)[i]; \
+			free(arr.data); \
 			arr.data = a; \
 		} \
 		((type*)arr.data)[arr.size - 1] = add; \
