@@ -15,40 +15,39 @@ typedef struct DynamicArray
 #define dynamicInit(arr, first, type) \
 	do { \
 		arr.size = 1; \
-		arr.length = 10; \
+		arr.length = 4; \
 		arr.data = (type*)malloc(arr.length * sizeof(type)); \
 		if (arr.data == NULL) { \
 			printf("Fatal Error\n"); \
-			return; \
+			exit(1); \
 		} \
 		((type*)arr.data)[arr.size - 1] = first; \
 	} while (0)
 
 #define dynamicAdd(arr, add, type) \
 	do { \
-		arr.size++; \
-		if (arr.size > arr.length) { \
+		if (arr.size >= arr.length) { \
 			arr.length *= 2; \
 			void* a = (type*)malloc(arr.length * sizeof(type)); \
 			if (a == NULL) { \
 				printf("Fatal Error\n"); \
-				return; \
+				exit(1); \
 			} \
 			for (unsigned int i = 0; i < arr.size; i++) \
 				((type*)a)[i] = ((type*)arr.data)[i]; \
 			free(arr.data); \
 			arr.data = a; \
 		} \
-		((type*)arr.data)[arr.size - 1] = add; \
+		((type*)arr.data)[arr.size] = add; \
+		arr.size++; \
 	} while (0)
 
 #define dynamicRemove(arr, index, type) \
 	do { \
-		if (index < 0 || index >= arr.size) return; \
-		arr.size--; \
-		if (index == arr.size) return; \
-		for (unsigned int i = index; i < arr.size; i++) \
+		if (index >= arr.size) break; \
+		for (unsigned int i = index; i < arr.size - 1; i++) \
 			((type*)arr.data)[i] = ((type*)arr.data)[i + 1]; \
+		arr.size--; \
 	} while (0)
 
 #endif
